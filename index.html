@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chronica Arcana — A modular RPG mod series for NeoForge</title>
+  <meta name="description" content="Chronica Arcana is the core of a modular RPG mod series for Minecraft on NeoForge. Install it alone or pair it with expansion modules.">
+  <meta property="og:title" content="Chronica Arcana">
+  <meta property="og:description" content="A modular RPG mod series for Minecraft on NeoForge.">
+  <meta property="og:type" content="website">
+  <style>
+    :root {
+      --bg: #0b0d1a;
+      --bg-2: #121631;
+      --card: #171b3a;
+      --line: #2a3066;
+      --text: #e8e6f5;
+      --muted: #9a9cc2;
+      --gold: #e2b95a;
+      --violet: #8b7cf6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 50% -10%, #2a2470 0%, transparent 60%),
+        radial-gradient(800px 400px at 90% 30%, #1d2a5e55 0%, transparent 60%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+    nav { padding: 20px 0; }
+    nav .wrap { display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-family: Georgia, "Times New Roman", serif; letter-spacing: .12em; text-transform: uppercase; font-size: .9rem; color: var(--gold); text-decoration: none; }
+    nav ul { display: flex; gap: 22px; list-style: none; }
+    nav a { color: var(--muted); text-decoration: none; font-size: .95rem; }
+    nav a:hover { color: var(--text); }
+
+    .hero { text-align: center; padding: 90px 0 70px; }
+    .sigil { font-size: 2.2rem; color: var(--gold); margin-bottom: 14px; }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.4rem, 7vw, 4.4rem);
+      letter-spacing: .06em;
+      font-weight: 700;
+      background: linear-gradient(180deg, #fff 20%, var(--gold));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .tagline { margin: 18px auto 0; max-width: 560px; color: var(--muted); font-size: 1.15rem; }
+    .actions { margin-top: 36px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; padding: 12px 26px; border-radius: 10px;
+      text-decoration: none; font-weight: 600; border: 1px solid var(--line);
+      background: var(--card); transition: transform .15s, border-color .15s;
+    }
+    .btn:hover { transform: translateY(-2px); border-color: var(--violet); }
+    .btn.primary { background: linear-gradient(135deg, var(--violet), #5f4fe0); border-color: transparent; }
+    .status { margin-top: 26px; font-size: .85rem; color: var(--muted); }
+    .status span { color: var(--gold); }
+
+    section { padding: 56px 0; }
+    h2 { font-family: Georgia, serif; font-size: 1.8rem; letter-spacing: .04em; margin-bottom: 14px; color: var(--gold); }
+    .lead { color: var(--muted); max-width: 680px; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 28px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px; }
+    .card h3 { font-size: 1.15rem; margin-bottom: 8px; }
+    .card p { color: var(--muted); font-size: .95rem; }
+    .tag { display: inline-block; margin-top: 14px; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+    .tag.live { color: #7be0a1; border-color: #2d6b48; }
+    .tag.soon { color: var(--gold); border-color: #6b5a2d; }
+
+    .downloads .grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .dl { text-align: center; text-decoration: none; transition: border-color .15s, transform .15s; }
+    .dl:hover { border-color: var(--violet); transform: translateY(-2px); }
+    .dl strong { display: block; font-size: 1.05rem; }
+    .dl small { color: var(--muted); }
+
+    footer { border-top: 1px solid var(--line); margin-top: 40px; padding: 30px 0 50px; color: var(--muted); font-size: .85rem; text-align: center; }
+    footer p + p { margin-top: 8px; }
+
+    @media (max-width: 560px) { nav ul { gap: 14px; } .hero { padding: 60px 0 50px; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="wrap">
+      <a class="brand" href="#top">Chronica Arcana</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#modules">Modules</a></li>
+        <li><a href="#download">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="wrap">
+      <div class="sigil">✦</div>
+      <h1>Chronica Arcana</h1>
+      <p class="tagline">A modular RPG mod series for Minecraft on NeoForge. Build the adventure you want, one module at a time.</p>
+      <div class="actions">
+        <a class="btn primary" href="#download">Get the mod</a>
+        <a class="btn" href="#modules">Explore modules</a>
+      </div>
+      <p class="status">Status: <span>in early development</span></p>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="wrap">
+        <h2>About</h2>
+        <p class="lead">
+          Chronica Arcana is the foundation of the series. It provides the shared systems that every
+          expansion builds on, so all modules work together without stepping on each other.
+          Every module is optional: install only what you want and leave the rest.
+        </p>
+        <div class="grid">
+          <div class="card">
+            <h3>Modular by design</h3>
+            <p>Pick the modules you like. Each one adds its own content on top of the core.</p>
+          </div>
+          <div class="card">
+            <h3>One shared foundation</h3>
+            <p>A common base keeps the series consistent and lets modules cooperate.</p>
+          </div>
+          <div class="card">
+            <h3>Open to addons</h3>
+            <p>Addons that depend on Chronica Arcana are explicitly welcome.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="modules">
+      <div class="wrap">
+        <h2>The Series</h2>
+        <p class="lead">The core comes first. Expansion modules follow, each named as <em>Chronica Arcana: Title</em>.</p>
+        <div class="grid">
+          <div class="card">
+            <h3>Chronica Arcana</h3>
+            <p>The core mod. Required by every module in the series.</p>
+            <span class="tag live">In development</span>
+          </div>
+          <div class="card">
+            <h3>Chronica Arcana: Ars et Astra</h3>
+            <p>The first planned expansion. Details coming soon.</p>
+            <span class="tag soon">Planned</span>
+          </div>
+          <div class="card">
+            <h3>More to come</h3>
+            <p>Further modules will be announced as the series grows.</p>
+            <span class="tag">Stay tuned</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="downloads">
+      <div class="wrap">
+        <h2>Download</h2>
+        <p class="lead">Requires Minecraft 26.3 and NeoForge. Releases will be published on these platforms.</p>
+        <div class="grid">
+          <!-- TODO: replace each "#" with the real project URL -->
+          <a class="card dl" href="#" rel="noopener"><strong>CurseForge</strong><small>Coming soon</small></a>
+          <a class="card dl" href="#" rel="noopener"><strong>Modrinth</strong><small>Coming soon</small></a>
+          <a class="card dl" href="#" rel="noopener"><strong>GitHub</strong><small>Source &amp; issues</small></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© 2026 Chronica Arcana. All Rights Reserved. Addons that declare this mod as a dependency are explicitly allowed; forks and re-uploads are not.</p>
+      <p>Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
